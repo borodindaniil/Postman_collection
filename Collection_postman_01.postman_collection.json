@@ -1,0 +1,677 @@
+{
+	"info": {
+		"_postman_id": "0821759a-b787-48b3-a43d-17f26ca612be",
+		"name": "Collection_postman_01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20093986"
+	},
+	"item": [
+		{
+			"name": "get_method",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hw_server}}/get_method?name={{$randomFirstName}}&age={{$randomInt}}",
+					"host": [
+						"{{hw_server}}"
+					],
+					"path": [
+						"get_method"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{$randomFirstName}}"
+						},
+						{
+							"key": "age",
+							"value": "{{$randomInt}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get_method",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hw_server}}/get_method?name=Dan&age=45",
+							"host": [
+								"{{hw_server}}"
+							],
+							"path": [
+								"get_method"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Dan"
+								},
+								{
+									"key": "age",
+									"value": "45"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Dec 2022 16:19:04 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"Dan\",\n    \"45\"\n]"
+				}
+			]
+		},
+		{
+			"name": "user_info_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Joseph",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "47",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "1200",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{hw_server}}/user_info_3",
+					"host": [
+						"{{hw_server}}"
+					],
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "user_info_3",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Joseph",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "47",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "1200",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{hw_server}}/user_info_3",
+							"host": [
+								"{{hw_server}}"
+							],
+							"path": [
+								"user_info_3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "224"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Dec 2022 16:20:29 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": \"47\",\n    \"family\": {\n        \"children\": [\n            [\n                \"Alex\",\n                24\n            ],\n            [\n                \"Kate\",\n                12\n            ]\n        ],\n        \"u_salary_1_5_year\": 4800\n    },\n    \"name\": \"Joseph\",\n    \"salary\": 1200\n}"
+				}
+			]
+		},
+		{
+			"name": "object_info_1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hw_server}}/object_info_1?name=Koko&age=25&weight=45",
+					"host": [
+						"{{hw_server}}"
+					],
+					"path": [
+						"object_info_1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Koko"
+						},
+						{
+							"key": "age",
+							"value": "25"
+						},
+						{
+							"key": "weight",
+							"value": "45"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "object_info_1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hw_server}}/object_info_1?name=Koko&age=25&weight=45",
+							"host": [
+								"{{hw_server}}"
+							],
+							"path": [
+								"object_info_1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Koko"
+								},
+								{
+									"key": "age",
+									"value": "25"
+								},
+								{
+									"key": "weight",
+									"value": "45"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Dec 2022 16:20:34 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 25,\n    \"daily_food\": 0.54,\n    \"daily_sleep\": 112.5,\n    \"name\": \"Koko\"\n}"
+				}
+			]
+		},
+		{
+			"name": "object_info_2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hw_server}}/object_info_2?name=Love&age=20&salary=1000",
+					"host": [
+						"{{hw_server}}"
+					],
+					"path": [
+						"object_info_2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Love"
+						},
+						{
+							"key": "age",
+							"value": "20"
+						},
+						{
+							"key": "salary",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "object_info_2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hw_server}}/object_info_2?name=Love&age=20&salary=1000",
+							"host": [
+								"{{hw_server}}"
+							],
+							"path": [
+								"object_info_2"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Love"
+								},
+								{
+									"key": "age",
+									"value": "20"
+								},
+								{
+									"key": "salary",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "316"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Dec 2022 16:22:31 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"person\": {\n        \"u_age\": 20,\n        \"u_name\": [\n            \"Love\",\n            1000,\n            20\n        ],\n        \"u_salary_5_years\": 4200\n    },\n    \"qa_salary_after_1.5_year\": 3300,\n    \"qa_salary_after_12_months\": 2700,\n    \"qa_salary_after_3.5_years\": 3800,\n    \"qa_salary_after_6_months\": 2000,\n    \"start_qa_salary\": 1000\n}"
+				}
+			]
+		},
+		{
+			"name": "object_info_3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hw_server}}/object_info_3?name=Lui&age=46&salary=1000",
+					"host": [
+						"{{hw_server}}"
+					],
+					"path": [
+						"object_info_3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Lui"
+						},
+						{
+							"key": "age",
+							"value": "46"
+						},
+						{
+							"key": "salary",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "object_info_3",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hw_server}}/object_info_3?name=Lui&age=46&salary=1000",
+							"host": [
+								"{{hw_server}}"
+							],
+							"path": [
+								"object_info_3"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Lui"
+								},
+								{
+									"key": "age",
+									"value": "46"
+								},
+								{
+									"key": "salary",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "376"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Dec 2022 16:22:43 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": \"46\",\n    \"family\": {\n        \"children\": [\n            [\n                \"Alex\",\n                24\n            ],\n            [\n                \"Kate\",\n                12\n            ]\n        ],\n        \"pets\": {\n            \"cat\": {\n                \"age\": 3,\n                \"name\": \"Sunny\"\n            },\n            \"dog\": {\n                \"age\": 4,\n                \"name\": \"Luky\"\n            }\n        },\n        \"u_salary_1_5_year\": 4000\n    },\n    \"name\": \"Lui\",\n    \"salary\": 1000\n}"
+				}
+			]
+		},
+		{
+			"name": "object_info_4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hw_server}}/object_info_4?name=George&age=78&salary=11000",
+					"host": [
+						"{{hw_server}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "George"
+						},
+						{
+							"key": "age",
+							"value": "78"
+						},
+						{
+							"key": "salary",
+							"value": "11000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "object_info_4",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hw_server}}/object_info_4?name=George&age=78&salary=11000",
+							"host": [
+								"{{hw_server}}"
+							],
+							"path": [
+								"object_info_4"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "George"
+								},
+								{
+									"key": "age",
+									"value": "78"
+								},
+								{
+									"key": "salary",
+									"value": "11000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Dec 2022 16:22:50 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 78,\n    \"name\": \"George\",\n    \"salary\": [\n        11000,\n        \"22000\",\n        \"33000\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "user_info_2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Lex",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "45",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "2500",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{hw_server}}/user_info_2",
+					"host": [
+						"{{hw_server}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "user_info_2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Lex",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "45",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "2500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{hw_server}}/user_info_2",
+							"host": [
+								"{{hw_server}}"
+							],
+							"path": [
+								"user_info_2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "316"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Dec 2022 16:22:56 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"person\": {\n        \"u_age\": 45,\n        \"u_name\": [\n            \"Lex\",\n            2500,\n            45\n        ],\n        \"u_salary_5_years\": 10500\n    },\n    \"qa_salary_after_1.5_year\": 8250,\n    \"qa_salary_after_12_months\": 6750,\n    \"qa_salary_after_3.5_years\": 9500,\n    \"qa_salary_after_6_months\": 5000,\n    \"start_qa_salary\": 2500\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "name",
+			"value": "Chel",
+			"type": "string"
+		}
+	]
+}
